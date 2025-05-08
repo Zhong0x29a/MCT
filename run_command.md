@@ -63,50 +63,6 @@ nohup python buffer.py --dataset=Tiny --data_path=./data/tiny-imagenet-200 --zca
 ```
 
 
-# multi-step gradient matching
-
-## CIFAR-10
-
-### no zca
-
-cosine distance loss (default)
-1. ipc=1, no zca, cosine loss
-```bush
-nohup python multi_step_gm.py --dataset=CIFAR10 --ipc=1 --syn_steps=50 --expert_epochs=2 --max_start_epoch=6 --lr_img=1e3 --lr_lr=1e-07 --lr_init 1e-2 > msg_cifar10_ipc1.log 2>&1 &
-```
-
-1. ipc=10, no zca, cosine loss
-```bush
-nohup python multi_step_gm.py --dataset=CIFAR10 --ipc=10 --syn_steps=30 --expert_epochs=2 --max_start_epoch=16 --lr_img=1e3 --lr_lr=1e-05 --lr_init 1e-2 > msg_cifar10_ipc10.log 2>&1 &
-```
-
-1. ipc=50, no zca, cosine loss
-```bush
-nohup python multi_step_gm.py --dataset=CIFAR10 --ipc=50 --syn_steps=30 --expert_epochs=2 --max_start_epoch=40 --lr_img=1e3 --lr_lr=1e-05 --lr_init 1e-3 > msg_cifar10_ipc50.log 2>&1 &
-```
-
-mse loss
-1. ipc=1, no zca, mse loss
-```bush
-nohup python multi_step_gm.py --dataset=CIFAR10 --ipc=1 --syn_steps=50 --expert_epochs=2 --max_start_epoch=6 --lr_img=1e3 --lr_lr=1e-07 --lr_init 1e-2 --distance_loss mse > msg_cifar10_ipc1_mse.log 2>&1 &
-```
-
-1. (smaller lr)ipc=1, no zca, mse loss
-```bush
-nohup python multi_step_gm.py --dataset=CIFAR10 --ipc=1 --syn_steps=50 --expert_epochs=2  --lr_teacher=2e-3 --max_start_epoch=6 --lr_img=1e3 --lr_lr=1e-07 --lr_init 1e-2 --distance_loss mse > msg_cifar10_ipc1_mse.log 2>&1 &
-```
-
-# multi-step gradient matching with weighted loss of GM
-
-## CIFAR-10
-
-1. ipc=1, no zca, cosine loss
-```bush
-nohup python multi_step_gm_weighted_loss.py --dataset=CIFAR10 --ipc=1 --syn_steps=50 --expert_epochs=2 --max_start_epoch=6 --lr_img=1e3 --lr_lr=1e-07 --lr_init 1e-2 > msg_wei_loss_cifar10_ipc1.log 2>&1 &
-```
-
-
-
 ## Convexed MTT
 
 ## CIFAR-10
