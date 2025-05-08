@@ -39,7 +39,7 @@ nohup python -u distill_convexified.py --dataset=CIFAR10 --ipc=1 --syn_steps=60 
 
 1. ipc=10, no zca
 ```bush
-nohup python -u distill_convexified.py --convex_ver=1 --dataset=CIFAR10 --ipc=10 --syn_steps=30 --expert_epochs=15 --max_start_epoch=8 --lr_img=1e3 --lr_lr=1e-05
+nohup python -u distill_convexified.py --dataset=CIFAR10 --ipc=10 --syn_steps=30 --expert_epochs=15 --max_start_epoch=8 --lr_img=1e3 --lr_lr=1e-05
 ```
 
 1. ipc=50, no zca
